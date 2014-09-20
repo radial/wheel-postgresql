@@ -1,0 +1,19 @@
+logs:
+    image: "radial/axle-base:latest"
+    volumes:
+        - /log
+data:
+    image: "radial/axle-base:latest"
+    volumes:
+        - /data/dbdata
+hub:
+    build: hub
+    volumes_from:
+        - logs
+        - data
+postgresql:
+    build: spoke
+    volumes_from:
+        - hub
+    ports:
+        - "22229:22"

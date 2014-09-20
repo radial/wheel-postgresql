@@ -1,0 +1,24 @@
+logs:
+    image: "radial/axle-base:latest"
+    volumes:
+        - /log
+data:
+    image: "radial/axle-base:latest"
+    volumes:
+        - /data/dbdata
+hub:
+    image: "radial/hub-base:latest"
+    volumes_from:
+        - logs
+        - data
+    volumes:
+        - /config
+        - /data
+        - /log
+        - /run
+postgresql:
+    image: "radial/postgresql:latest"
+    volumes_from:
+        - hub
+    ports:
+        - "22229:22"
