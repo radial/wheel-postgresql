@@ -20,5 +20,3 @@ postgresql:
     image: "radial/postgresql:latest"
     volumes_from:
         - hub
-    ports:
-        - "22229:22"

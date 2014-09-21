@@ -15,5 +15,3 @@ postgresql:
     build: spoke
     volumes_from:
         - hub
-    ports:
-        - "22229:22"
