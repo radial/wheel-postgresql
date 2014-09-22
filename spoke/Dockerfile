@@ -7,11 +7,10 @@ MAINTAINER      Brian Clements <radial@brianclements.net>
 ENV             DEBIAN_FRONTEND noninteractive
 RUN             apt-get -q update && apt-get -qyV install \
                     postgresql postgresql-client postgresql-contrib &&\
-                apt-get clean
+                apt-get clean &&\
+                rm -rf /var/lib/apt/lists/*
 
 # Process startup info
 ENV             SPOKE_NAME postgresql
 
 COPY            /entrypoint.sh /entrypoint.sh
-
-EXPOSE          5432
