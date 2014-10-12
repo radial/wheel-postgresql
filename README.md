@@ -2,17 +2,6 @@
 
 This is a Radial Wheel repository for a [PostgreSQL][postgres] database.
 
-It has sane defaults so you can test it all out. Separate from the postgresql
-configuration located in the `/config/postgresql` directory, the initial
-database setup can be done by running with the following environment variables
-set:
-
-  - `$DB_USER` Database admin user
-  - `$DB_PASS` Password. Don't set this and a random string will be used
-  - `$DB_NAME` Database name
-  - `$PGDATA` Database folder location. Should be somewhere in the `/data`
-    folder to make sure it is shared properly.
-
 When run, the database folder and permissions are created/set and then the
 database is initialized. Make note of the `/config/postgresql/setupdb` file.
 This file contains a single string that gets sent into `postgres --single` at
@@ -20,6 +9,22 @@ setup for additional database commands such as assigning users, ownerships, and
 any other initial database setup you might want to do.
 
 [postgres]: http://www.postgresql.org/
+
+## Tunables
+
+It has sane defaults so you can test it all out. Separate from the postgresql
+configuration located in the `/config/postgresql` directory, the initial
+database setup can be done by running with the following environment variables
+set:
+
+  - **$DB_USER**: Database admin user
+  - **$DB_PASS**: Password. Don't set this and a random string will be used
+  - **$DB_NAME**: Database name
+  - **$DB_DIR**: Database folder location. Should be somewhere in the `/data`
+    folder to make sure it is shared properly.
+  - **$SETUP_DB_COMMANDS**: SQL commands, separated by ";" and a new line, all
+    wrapped in double quotes to make it a single string. These are for
+    additional user/permissions setup to the database after it is initialized. 
 
 ## Radial
 
