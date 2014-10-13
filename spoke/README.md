@@ -22,9 +22,10 @@ set:
   - **$DB_NAME**: Database name
   - **$DB_DIR**: Database folder location. Should be somewhere in the `/data`
     folder to make sure it is shared properly.
-  - **$SETUP_DB_COMMANDS**: SQL commands, separated by ";" and a new line, all
-    wrapped in double quotes to make it a single string. These are for
-    additional user/permissions setup to the database after it is initialized. 
+  - **$SETUP_DB_COMMANDS**: Path to file containing SQL setup commands. They
+    must be separated by ";" and a new line, and all wrapped in double quotes to
+    make it a single string. These are for additional user/permissions setup to
+    the database after it is initialized. 
 
 ## Radial
 
