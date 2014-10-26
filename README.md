@@ -12,17 +12,17 @@ any other initial database setup you might want to do.
 
 ## Tunables
 
-It has sane defaults so you can test it all out. Separate from the postgresql
+It has sane defaults (italics) so you can test it all out. Separate from the postgresql
 configuration located in the `/config/postgresql` directory, the initial
 database setup can be done by running with the following environment variables
 set:
 
-  - **$DB_USER**: Database admin user
-  - **$DB_PASS**: Password. Don't set this and a random string will be used
-  - **$DB_NAME**: Database name
-  - **$DB_DIR**: Database folder location. Should be somewhere in the `/data`
+  - **$DB_USER**: {_"tempuser"_} Database admin user
+  - **$DB_PASS**: [_random_] Password. Don't set this and a random string will be used
+  - **$DB_NAME**: {_"tempdb"_} Database name
+  - **$DB_DIR**: {_"/data/dbdata"_} Database folder location. Should be somewhere in the `/data`
     folder to make sure it is shared properly.
-  - **$SETUP_DB_COMMANDS**: Path to file containing SQL setup commands. They
+  - **$SETUP_DB_COMMANDS**: {_"/config/postgresql/setupdb"_} Path to file containing SQL setup commands. They
     must be separated by ";" and a new line, and all wrapped in double quotes to
     make it a single string. These are for additional user/permissions setup to
     the database after it is initialized. 
