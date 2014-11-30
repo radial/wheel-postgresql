@@ -12,5 +12,6 @@ RUN             apt-get -q update && apt-get -qyV install \
 
 # Process startup info
 ENV             SPOKE_NAME postgresql
+ENV             SPOKE_CMD /usr/bin/psql
 
 COPY            /entrypoint.sh /entrypoint.sh
