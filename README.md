@@ -45,13 +45,13 @@ Wheel of many Spokes all joined by the Hub container (database, application
 code, web server, backend services etc.). Check out the [Wheel
 tutorial][wheel-template] for some more details on how this works.
 
-Note also that for now, Radial makes use of [Fig][fig] for all orchestration,
-demonstration, and testing. Radial is just a collection of images and
-strategies, so technically, any orchestration tool can work. But Fig was the
-leanest and most logical to use for now. 
+Note also that for now, Radial makes use of [Docker Compose][compose] for
+all orchestration, demonstration, and testing. Radial is just a collection of
+images and strategies, so technically, any orchestration tool can work. But
+Docker Compose was the leanest and most logical to use for now. 
 
 [wheel-template]: https://github.com/radial/template-wheel
-[fig]: http://www.fig.sh
+[compose]: https://docs.docker.com/compose/install
 [docker]: http://docker.io/
 [radial]: https://github.com/radial
 [radialdocs]: http://radial.viewdocs.io/docs
@@ -65,7 +65,7 @@ scratch, then you can do the following:
 
 1. Clone this repository
 2. Make whatever changes needed to configuration and add whatever files
-3. `fig up`
+3. `docker-compose up`
 
 ### Dynamic Build
 
@@ -90,8 +90,8 @@ configurations rapidly are best done dynamically with no building.
 
 To run dynamically:
 
-1. Modify the `fig-dynamic.yml` file to point at your own Wheel repository
+1. Modify the `docker-compose-dynamic.yml` file to point at your own Wheel repository
    location by setting the `$WHEEL_REPO` variable. When run, the Hub container
    will pull the "config" branch of that repository and use it to run the Spoke
    container with your own configuration.
-3. `fig -f fig-dynamic.yml up`
+3. `docker-compose -f docker-compose-dynamic.yml up`
